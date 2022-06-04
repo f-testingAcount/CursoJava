@@ -9,7 +9,7 @@ package com.udemy.dominio;
  * @author user
  */
 public class Persona {
-    private String nombre;
+    protected String nombre;
     protected char genero;
     protected int edad;
     protected String direccion;
