@@ -8,16 +8,22 @@ package com.udemy.paquete1;
  *
  * @author user
  */
-public class Clase1 { //La clase publica puede ser utilizada desde otras clases del mismo paquete o de otros paquetes. Es aacesible desde cualquier parte del proyecto.
-    public String atributoPublico = "Valor atributo publico";
+public class Clase1 { //Las clases no admiten el modificador protected.
+    protected String atributoProtected = "Valor atributo protected";
     
-    public Clase1(){
-        System.out.println("Constructor publico"); //El mismo caso de da para el constructor
+    protected Clase1(){ //Los constructores no se heredan. El constructor protected solo puede accederse desde clases hijas invocando el metodo super().
+        System.out.println("Constructor protected"); //Los protected se limitan al ambito del paquete que habitan
     }
     
-    public void metodoPublico(){
-        System.out.println("Metodo publico");
+    public Clase1(String arg){ //Agregamos este metodo publico para poder instanciar la clase en el main
+        System.out.println("Constructor publico");
     }
+    
+    protected void metodoProtected(){ // Idem
+        System.out.println("Metodo protected");
+    }
+    //TODOS LOS ATRIBUTOS, CONSTRUCTORES Y METODOS PROTECTED SOLO PUEDEN ACCEDERSE DESDE CLASES HIJAS.
+    
     
     
 }

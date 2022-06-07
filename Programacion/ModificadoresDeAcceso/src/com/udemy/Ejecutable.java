@@ -5,6 +5,7 @@
 package com.udemy;
 
 import com.udemy.paquete1.Clase1;
+import com.udemy.paquete2.ClaseHija;
 
 /**
  *
@@ -16,11 +17,12 @@ public class Ejecutable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Clase1 clase1 = new Clase1();
-        System.out.println("clase1 = " + clase1.atributoPublico);
-        clase1.metodoPublico();
+        Clase1 clase1 = new Clase1("Publico");
+        //System.out.println("clase1 = " + clase1.atributoPublico); //El atributo no puede accederse si esta marcado como protected en la clase origen. Solamente pueden accederse desde clases hijas de la originaria.
+        //clase1.metodoPublico(); //este metodo no puede ser accedido porque esta marcado como protected en la Clase origen idem anterior 
         
-        
+        ClaseHija claseHija = new ClaseHija();
+        System.out.println("claseHija = " + claseHija);
         
         
         
