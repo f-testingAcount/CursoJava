@@ -8,21 +8,31 @@ package paquete1;
  *
  * @author user
  */
-class Clase1 { //Las clases no admiten el modificador protected.
-    String atributoDefault = "Valor atributo default";
+class Clase1 { 
+    String atributoPrivado = "Valor atributo privado"; //El atributo private no puede accederce directamente desde otras clases. Se necesitan metodos accesores como getters and setters
     
-    Clase1(){ //Los constructores no se heredan. El constructor protected solo puede accederse desde clases hijas invocando el metodo super().
-        System.out.println("Constructor default"); //Los protected se limitan al ambito del paquete que habitan
+    private Clase1(){ //El constructor privdo no permite crear objetos fuera de la clase con el constructor vacion.
+        System.out.println("Constructor privado"); //Los protected se limitan al ambito del paquete que habitan
     }
     
-//    public Clase1(String arg){ //Agregamos este metodo publico para poder instanciar la clase en el main
-//        System.out.println("Constructor publico");
-//    }
-    
-    void metodoDefault(){ // Idem
-        System.out.println("Metodo default");
+    public Clase1(String argumento){ //Agregamos este metodo publico para poder instanciar la clase en el main
+        this();
+        System.out.println("Constructor publico");
     }
-    //TODOS LOS ATRIBUTOS, CONSTRUCTORES Y METODOS PROTECTED SOLO PUEDEN ACCEDERSE DESDE CLASES HIJAS.
+    
+    private void metodoPrivado(){ //Esto no se puede utilizar desde la clase hija.
+        System.out.println("Metodo privado");
+    }
+
+    public String getAtributoPrivado() {
+        return atributoPrivado;
+    }
+
+    public void setAtributoPrivado(String atributoPrivado) {
+        this.atributoPrivado = atributoPrivado;
+    }
+    
+    
     
     
     
