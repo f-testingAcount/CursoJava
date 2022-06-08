@@ -4,6 +4,7 @@
  */
 package com.udemy;
 
+import com.udemy.dominio.Empleado;
 import com.udemy.dominio.Gerente;
 
 /**
@@ -16,8 +17,20 @@ public class Ejecutable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Gerente gerente1 = new Gerente("Juan", 5000, "Sistemas");
-        System.out.println("gerente1 = " + gerente1.obtenerDetalles());
+        Empleado empleado = new Empleado("Juan", 5000);
+//        System.out.println("empleado = " + empleado.obtenerDetalles());
+        imprimir(empleado);
+        
+        Gerente gerente = new Gerente("Karla", 10000, "Contabilidad");
+//        System.out.println("gerente = " + gerente.obtenerDetalles());
+        imprimir(gerente);
+        
+    
+    
+    }
+    
+    public static void imprimir(Empleado empleado){
+        System.out.println("empleado = " + empleado.obtenerDetalles());
     }
     
 }
