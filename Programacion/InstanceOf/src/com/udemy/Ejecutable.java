@@ -18,20 +18,25 @@ public class Ejecutable {
      */
     public static void main(String[] args) {
         Empleado empleado = new Empleado("Juan", 5000);
-//        System.out.println("empleado = " + empleado.obtenerDetalles());
-        imprimir(empleado);
+        //determinarTipo(empleado);
         
-//      empleado = new Gerente //La linea de abajo la podemos escribir asi a fin de evitar crear una nueva variable ya que las variables de tipo padre pueden almacener referencias de tipo hija.
-        Gerente gerente = new Gerente("Karla", 10000, "Contabilidad");
-//        System.out.println("gerente = " + gerente.obtenerDetalles());
-        imprimir(gerente);
-//      imprimir(empleado);  //Si utilizamos la variable empleado pasasamos esa variable como referencia.        
-    
+        empleado = new Gerente("Karla", 10000, "Contabilidad");
+        determinarTipo(empleado);
     
     }
     
-    public static void imprimir(Empleado empleado){
-        System.out.println("empleado = " + empleado.obtenerDetalles());
+    public static void determinarTipo(Empleado empleado){
+        if (empleado instanceof Gerente) {
+            System.out.println("Es de tipo gerente");
+            Gerente gerente = (Gerente)empleado;
+            System.out.println("gerente = " + gerente.getDepartamento());
+            //La linea de arriba le modifica el tipo a la variable para poder instanciarla caso contrario cuando invocamos el metodo el ide lo resueve automaticamente con la sintaxis de la linea de abajo. Lo castea de forma similar a lo que se hace con los wrappers.
+//            ((Gerente) empleado).getDepartamento();
+        } else if(empleado instanceof Empleado){
+            System.out.println("Es de tipo Empleado");
+        } else if(empleado instanceof Object) {
+            System.out.println("Es de tipo Object");
+        }
     }
     
 }
