@@ -6,6 +6,7 @@ package com.udemy;
 
 import com.udemy.genericos.ClaseGenerica;
 
+
 /**
  *
  * @author user
@@ -21,6 +22,7 @@ public class Ejecutable {
         
         ClaseGenerica<String> objetoString = new ClaseGenerica("Juan");
         objetoString.obtenerTipo();
+        
     }
     
 }
