@@ -23,19 +23,35 @@ public class Ejecutable {
         miLista.add("Miercoles");
         miLista.add("Jueves");
         miLista.add("Viernes");
+        imprimir(miLista);
         
-        for (Object elemento : miLista) {
-            System.out.println("elemento = " + elemento);
-        }
-        
+//        for (Object elemento : miLista) {
+//            System.out.println("elemento = " + elemento);
+//        }
+//        
+//        System.out.println("\n");
+//                
+//        miLista.forEach(elemento -> { //Funcion Lambda o funcion flecha
+//            System.out.println("elemento = " + elemento);
+//        });
+
         System.out.println("\n");
-                
-        miLista.forEach(elemento -> { //Funcion Lambda o funcion flecha
+        
+        Set miSet = new HashSet();
+        miSet.add("Lunes"); //El metodo set esta definido en la Interface Collections y las interfaces hijas lo heredan
+        miSet.add("Martes");
+        miSet.add("Miercoles");
+        miSet.add("Jueves");
+        miSet.add("Viernes");
+        imprimir(miSet);
+        
+        
+    }
+    
+    public static void imprimir(Collection coleccion){
+        coleccion.forEach(elemento -> {
             System.out.println("elemento = " + elemento);
-        });
-        
-        
-        
+        });       
     }
     
 }
