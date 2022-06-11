@@ -29,7 +29,7 @@ public class Ejecutable {
         
         System.out.println("\n");
         
-        imprimir(miLista);
+        
         
 //        for (Object elemento : miLista) {
 //            System.out.println("elemento = " + elemento);
@@ -43,7 +43,7 @@ public class Ejecutable {
 
         System.out.println("\n");
         
-        Set miSet = new HashSet();
+        Set<String> miSet = new HashSet<>();
         miSet.add("Lunes"); //El metodo set esta definido en la Interface Collections y las interfaces hijas lo heredan
         miSet.add("Martes");
         miSet.add("Miercoles");
@@ -51,25 +51,30 @@ public class Ejecutable {
         miSet.add("Viernes"); //En Set no se pueden duplicar elementos, si se agrega un mismo elemento dos veces el ultimo se descarta.
         
         
-//        imprimir(miSet);
+        imprimir(miSet);
 //        
-//        System.out.println("\n");
-//        
-//        Map miMapa = new HashMap(); //Los metodos de esta clase no se heredan de la interface Collection sino de la clase Map por lo tanto en lugar de add se utiliza put.
-//        miMapa.put("valor1", "Juan");
-//        miMapa.put("valor2", "Karla");
-//        miMapa.put("valor3", "Rosario");
+        System.out.println("\n");
+        
+        Map<String, String> miMapa = new HashMap<>(); //Los metodos de esta clase no se heredan de la interface Collection sino de la clase Map por lo tanto en lugar de add se utiliza put.
+        miMapa.put("valor1", "Juan");
+        miMapa.put("valor2", "Karla");
+        miMapa.put("valor3", "Rosario");
+        miMapa.put("valor3", "Carlos"); //En este caso el elemento duplicado valor3 toma como valido solo el valor del ultimo agregado. No impime los dos.
+        
+        String elementoMapa = miMapa.get("valor1"); //ya no es necesaria la conversion a String como en la linea comentada de abajo.
+        System.out.println("elementoMapa = " + elementoMapa);
+        
         
 //        String elemento = (String) miMapa.get("valor1");
 //        System.out.println("elemento = " + elemento);
 //        
-//        System.out.println("\n");
-//        
-//        imprimir(miMapa.keySet());
-//        
-//        System.out.println("\n");
-//        
-//        imprimir(miMapa.values());
+        System.out.println("\n");
+        
+        imprimir(miMapa.keySet());
+        
+        System.out.println("\n");
+        
+        imprimir(miMapa.values());
         
         
         
