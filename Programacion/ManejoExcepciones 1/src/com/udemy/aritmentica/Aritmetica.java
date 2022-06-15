@@ -10,8 +10,8 @@ import com.udemy.excepciones.OperacionExcepcion;
  *
  * @author user
  */
-public class Aritmetica {
-    public static int division(int numerador, int denominador) { //En el caso del RuntimeException no es necesario agregar la excepcion en la firma del metodo
+public class Aritmetica {                                      //Con throws <nombre de la clase propia de excepciones> en este caso OperacionExcepcion reportamos en la firma del metodo el posible acontecer de una excepcion.
+    public static int division(int numerador, int denominador) throws OperacionExcepcion { //En el caso del RuntimeException no es necesario agregar la excepcion en la firma del metodo
         if (denominador == 0) {
             throw new OperacionExcepcion("Division por cero");
         }
